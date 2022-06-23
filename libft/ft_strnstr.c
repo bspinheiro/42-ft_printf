@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bda-silv <bda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/22 14:11:48 by bda-silv          #+#    #+#             */
-/*   Updated: 2022/06/23 13:26:39 by bda-silv         ###   ########.fr       */
+/*   Created: 2022/06/01 10:50:24 by bda-silv          #+#    #+#             */
+/*   Updated: 2022/06/18 15:55:07 by bda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdarg.h>
-# include "libft/libft.h"
+char	*ft_strnstr(const char *hay, const char *needle, size_t n)
+{
+	size_t	i;
+	size_t	n_needle;
 
-int	ft_printf(const char *str, ...);
-
-#endif
+	n_needle = ft_strlen((char *)needle);
+	if (!*needle)
+		return ((char *)hay);
+	i = 0;
+	while (*hay && i < n)
+	{
+		if ((ft_strncmp(hay, needle, n_needle) == 0) && (i + n_needle <= n))
+			return ((char *)hay);
+		hay++;
+		i++;
+	}
+	return (0);
+}

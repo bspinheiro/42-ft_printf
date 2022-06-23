@@ -1,22 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bda-silv <bda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/22 14:11:48 by bda-silv          #+#    #+#             */
-/*   Updated: 2022/06/23 13:26:39 by bda-silv         ###   ########.fr       */
+/*   Created: 2022/05/11 08:37:27 by bda-silv          #+#    #+#             */
+/*   Updated: 2022/05/11 08:37:30 by bda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-
-# include <unistd.h>
-# include <stdarg.h>
-# include "libft/libft.h"
-
-int	ft_printf(const char *str, ...);
-
-#endif
+int	ft_isprint(int c)
+{
+	return ((c >= 32) && (c <= 126));
+}

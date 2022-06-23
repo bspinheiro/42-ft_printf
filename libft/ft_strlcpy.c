@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bda-silv <bda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/22 14:11:48 by bda-silv          #+#    #+#             */
-/*   Updated: 2022/06/23 13:26:39 by bda-silv         ###   ########.fr       */
+/*   Created: 2022/05/30 07:31:21 by bda-silv          #+#    #+#             */
+/*   Updated: 2022/06/18 15:47:54 by bda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdarg.h>
-# include "libft/libft.h"
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstlen)
+{
+	const char	*buf;
 
-int	ft_printf(const char *str, ...);
-
-#endif
+	if (!dst || !src)
+		return (ft_strlen(src));
+	buf = src;
+	if (src && dst && dstlen)
+	{
+		while (*src && --dstlen)
+			*dst++ = *src++;
+		*dst = 0;
+	}
+	return (ft_strlen((char *)buf));
+}

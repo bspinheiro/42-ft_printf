@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bda-silv <bda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/22 14:11:48 by bda-silv          #+#    #+#             */
-/*   Updated: 2022/06/23 13:26:39 by bda-silv         ###   ########.fr       */
+/*   Created: 2022/06/15 00:49:15 by bda-silv          #+#    #+#             */
+/*   Updated: 2022/06/15 12:50:41 by bda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdarg.h>
-# include "libft/libft.h"
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	size_t	l;
 
-int	ft_printf(const char *str, ...);
-
-#endif
+	if (!s1 || !set)
+		return (NULL);
+	while (*s1 && ft_strchr(set, *s1))
+		s1++;
+	l = ft_strlen(s1);
+	while (l > 0 && ft_strchr(set, s1[l]))
+		l--;
+	return (ft_substr(s1, 0, l + 1));
+}

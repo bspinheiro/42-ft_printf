@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bda-silv <bda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/22 14:11:48 by bda-silv          #+#    #+#             */
-/*   Updated: 2022/06/23 13:26:39 by bda-silv         ###   ########.fr       */
+/*   Created: 2022/05/19 09:29:54 by bda-silv          #+#    #+#             */
+/*   Updated: 2022/06/18 15:55:29 by bda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdarg.h>
-# include "libft/libft.h"
+char	*ft_strrchr(const char *s, int c)
+{
+	char	*save;
 
-int	ft_printf(const char *str, ...);
-
-#endif
+	if (c == 0)
+		return (ft_strchr(s, c));
+	save = 0;
+	while (*s != '\0')
+	{
+		if (*s == (unsigned char)c)
+			save = (char *)s;
+		s++;
+	}
+	return (save);
+}

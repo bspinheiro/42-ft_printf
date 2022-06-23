@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bda-silv <bda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/22 14:11:48 by bda-silv          #+#    #+#             */
-/*   Updated: 2022/06/23 13:26:39 by bda-silv         ###   ########.fr       */
+/*   Created: 2022/06/09 10:19:27 by bda-silv          #+#    #+#             */
+/*   Updated: 2022/06/09 12:24:45 by bda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdarg.h>
-# include "libft/libft.h"
+char	*ft_strdup(const char *s)
+{
+	size_t	l;
+	char	*t;
 
-int	ft_printf(const char *str, ...);
-
-#endif
+	l = ft_strlen((char *)s);
+	t = malloc(sizeof(char) * (l + 1));
+	if (t == NULL)
+		return (NULL);
+	ft_memcpy(t, s, l);
+	t[l] = '\0';
+	return (t);
+}

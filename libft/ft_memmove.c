@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bda-silv <bda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/22 14:11:48 by bda-silv          #+#    #+#             */
-/*   Updated: 2022/06/23 13:26:39 by bda-silv         ###   ########.fr       */
+/*   Created: 2022/05/27 10:41:59 by bda-silv          #+#    #+#             */
+/*   Updated: 2022/06/18 15:41:27 by bda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdarg.h>
-# include "libft/libft.h"
+void	*ft_memmove(void *dst, const void *src, size_t len)
+{
+	unsigned char		*_dst;
+	const unsigned char	*_src;
 
-int	ft_printf(const char *str, ...);
-
-#endif
+	_dst = (unsigned char *)dst;
+	_src = (unsigned char *)src;
+	if (_dst <= _src)
+		return (ft_memcpy(dst, src, len));
+	else
+	{
+		while (len--)
+		{
+			*(_dst + len) = *(_src + len);
+		}
+	}
+	return (dst);
+}
