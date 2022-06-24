@@ -6,7 +6,7 @@
 /*   By: bda-silv <bda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 14:27:17 by bda-silv          #+#    #+#             */
-/*   Updated: 2022/06/24 06:15:14 by bda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/24 06:46:20 by bda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,22 @@ static int
 		len = f_arg_s(ap);
 	if (c == 'd')
 		len = f_arg_d(ap);
+	if (c == 'p')
+		len = f_arg_p(ap);
+	if (c == 'i')
+		len = f_arg_i(ap);
+	if (c == 'u')
+		len = f_arg_u(ap);
+	if (c == 'x')
+		len = f_arg_x(ap);
+	if (c == 'X')
+		len = f_arg_X(ap);
+	if (c == '%')
+		len = f_arg_pc(ap);
 	return (len);
 }
 
-int
-	ft_printf(const char *str, ...)
+int	ft_printf(const char *str, ...)
 {
 	va_list	ap;
 	int		i;
@@ -50,10 +61,7 @@ int
 	while (str[i] != '\0')
 	{
 		if (str[i] == '%' && *ft_strchr("cspdiuxX%", str[i + 1]))
-		{
-			i++;
-			r += ft_parse(str[i], ap);
-		}
+			r += ft_parse(str[++i], ap);
 		else
 		{
 			r++;
