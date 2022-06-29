@@ -6,7 +6,7 @@
 /*   By: bda-silv <bda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 14:11:48 by bda-silv          #+#    #+#             */
-/*   Updated: 2022/06/24 06:46:14 by bda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/29 14:48:40 by bda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,13 @@
 # include <stdio.h> // TODO: Remove this header before Evaluation
 
 int	ft_printf(const char *str, ...);
-int	f_arg_c(va_list ap);
-int	f_arg_s(va_list ap);
-int	f_arg_d(va_list ap);
-int	f_arg_p(va_list ap);
-int	f_arg_i(va_list ap);
-int	f_arg_u(va_list ap);
-int	f_arg_x(va_list ap);
-int	f_arg_X(va_list ap);
-int	f_arg_pc(va_list ap);
+int	f_arg_c(int *counter, va_list ap);
+int	f_arg_s(int *counter, va_list ap);
+int	f_arg_di(int *counter, va_list ap);
+int	f_arg_u(int *counter, va_list ap);
+//int	f_arg_p(int *counter, va_list ap);
+//int	f_arg_x(int *counter, va_list ap);
+//int	f_arg_X(int *counter, va_list ap);
+int	f_arg_pc(int *counter);
 
 #endif

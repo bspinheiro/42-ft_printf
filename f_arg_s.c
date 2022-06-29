@@ -6,19 +6,18 @@
 /*   By: bda-silv <bda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 04:24:50 by bda-silv          #+#    #+#             */
-/*   Updated: 2022/06/24 04:33:32 by bda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/29 10:50:52 by bda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	f_arg_s(va_list ap)
+int	f_arg_s(int *counter,va_list ap)
 {
 	char	*s;
-	int		n;
 
 	s = va_arg(ap, char *);
-	n = ft_strlen(s);
+	*counter += ft_strlen(s);
 	ft_putstr_fd(s, 1);
-	return (n);
+	return (*counter);
 }

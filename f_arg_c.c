@@ -6,18 +6,17 @@
 /*   By: bda-silv <bda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 04:16:11 by bda-silv          #+#    #+#             */
-/*   Updated: 2022/06/24 04:24:34 by bda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/29 10:24:06 by bda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	f_arg_c(va_list ap)
+int	f_arg_c(int *counter, va_list ap)
 {
-	int	n;
+	char	c;
 
-	n = 0;
-	n = va_arg(ap, int);
-	n = write(1, &n, 1);
-	return (n);
+	c = va_arg(ap, int);
+	*counter += write(1, &c, 1);
+	return (*counter);
 }
