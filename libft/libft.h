@@ -6,7 +6,7 @@
 /*   By: bda-silv <bda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 10:37:45 by bda-silv          #+#    #+#             */
-/*   Updated: 2022/06/17 15:46:07 by bda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/30 00:40:28 by bda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int				ft_isprint(int c);
 int				ft_toupper(int c);
 int				ft_tolower(int c);
 int				ft_atoi(const char *str);
+int				ft_nbrlen(int n, int base);
 size_t			ft_strlen(const char *s);
 size_t			ft_strlcpy(char *dst, const char *src, size_t n);
 size_t			ft_strlcat(char *dst, const char *src, size_t n);
@@ -39,6 +40,8 @@ char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strtrim(char const *s1, char const *set);
 char			**ft_split(char const *s, char c);
 char			*ft_itoa(int n);
+char			*ft_itoa_base(int n, int base);
+char			*ft_utoa(unsigned int n);
 void			ft_bzero(void *s, size_t n);
 void			*ft_memset(void *s, int c, size_t n);
 void			*ft_memcpy(void *dst, const void *src, size_t n);

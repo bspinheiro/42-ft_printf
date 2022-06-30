@@ -6,7 +6,7 @@
 /*   By: bda-silv <bda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 14:27:17 by bda-silv          #+#    #+#             */
-/*   Updated: 2022/06/29 14:49:44 by bda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/30 02:09:20 by bda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,10 @@ static void	ft_parse(char c, int *counter, va_list ap)
 //		f_arg_p(counter, ap);
 	if (c == '%')
 		f_arg_pc(counter);
-/*
 	if (c == 'x')
-		f_arg_x(counter, ap);
+		f_arg_x(0, counter, ap);
 	if (c == 'X')
-		f_arg_X(counter, ap);
-*/
+		f_arg_x(1, counter, ap);
 }
 
 int	ft_printf(const char *str, ...)
@@ -73,8 +71,8 @@ int	ft_printf(const char *str, ...)
 int
 	main(void)
 {
-	int k = ft_printf("blew %c %s %i %% \n", '!', "cats", -123 );
-	int l = printf("blew %c %s %i %% \n", '!', "cats", -123);
+	int k = ft_printf("%X\n", 122);
+	int l = printf("%X\n", 122);
 	printf("%i %i", k, l);
 	return (0);
 }

@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   f_arg_u.c                                          :+:      :+:    :+:   */
+/*   ft_nbrlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bda-silv <bda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/24 04:16:11 by bda-silv          #+#    #+#             */
-/*   Updated: 2022/06/30 01:39:56 by bda-silv         ###   ########.fr       */
+/*   Created: 2022/06/29 23:13:59 by bda-silv          #+#    #+#             */
+/*   Updated: 2022/06/29 23:18:29 by bda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-
-int	f_arg_u(int *counter, va_list ap)
+int	ft_nbrlen(int n, int base)
 {
-	char	*s;
+	int	i;
 
-	s = ft_utoa(va_arg(ap, unsigned int));
-	*counter += ft_strlen(s);
-	ft_putstr_fd(s, 1);
-	if (s)
-		free(s);
-	return (*counter);
+	if (n == 0)
+		return (1);
+	i = 0;
+	while (n > 0)
+	{
+		n /= base;
+		i++;
+	}
+	return (i);
 }

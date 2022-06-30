@@ -6,7 +6,7 @@
 #    By: bda-silv <bda-silv@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/18 18:08:33 by bda-silv          #+#    #+#              #
-#*   Updated: 2022/06/18 18:08:43 by                  ###   ########.fr       *#
+#*   Updated: 2022/06/30 00:42:27 by                  ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,9 @@ SRCS	=	ft_atoi.c \
 			ft_substr.c \
 			ft_tolower.c \
 			ft_toupper.c \
+			ft_nbrlen.c \
+			ft_utoa.c \
+			ft_itoa_base.c\
 
 OBJS	=	$(SRCS:.c=.o)
 

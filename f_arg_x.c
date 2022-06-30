@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   f_arg_u.c                                          :+:      :+:    :+:   */
+/*   f_arg_x.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bda-silv <bda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/24 04:16:11 by bda-silv          #+#    #+#             */
-/*   Updated: 2022/06/30 01:39:56 by bda-silv         ###   ########.fr       */
+/*   Created: 2022/06/30 01:12:48 by bda-silv          #+#    #+#             */
+/*   Updated: 2022/06/30 02:42:10 by bda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	f_arg_u(int *counter, va_list ap)
+int	f_arg_x(int isupper, int *counter, va_list ap)
 {
 	char	*s;
+	int		i;
 
-	s = ft_utoa(va_arg(ap, unsigned int));
+	i = 0;
+	s = ft_itoa_base(va_arg(ap, unsigned int), 16);
+	if (isupper == 1)
+	{
+		while (s[i])
+		{
+			s[i] = ft_toupper((char)s[i]);
+			i++;
+		}
+	}
 	*counter += ft_strlen(s);
 	ft_putstr_fd(s, 1);
 	if (s)

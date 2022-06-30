@@ -6,7 +6,7 @@
 #    By: bda-silv <bda-silv@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/18 18:08:33 by bda-silv          #+#    #+#              #
-#*   Updated: 2022/06/23 14:22:02 by                  ###   ########.fr       *#
+#*   Updated: 2022/06/30 00:56:59 by                  ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,10 +21,10 @@ LIB		=	./libft
 
 NAME	=	libftprint.a
 
-CC 		=	@cc
+CC 		=	cc
 CFLAGS 	=	-Wall -Wextra -Werror
 
-RM		=	@rm -f
+RM		=	rm -f
 
 all:		$(NAME)
 
