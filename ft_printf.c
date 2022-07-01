@@ -6,17 +6,9 @@
 /*   By: bda-silv <bda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 14:27:17 by bda-silv          #+#    #+#             */
-/*   Updated: 2022/06/30 02:09:20 by bda-silv         ###   ########.fr       */
+/*   Updated: 2022/07/01 14:57:48 by bda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/* TODO:
- * - read params
- * - sort params
- *   printf("", a, b, c)
- *   no ponteiro, unsigned long
- *	ft_putstr_fd(va_arg(arg, char *), 1);
- * */
 
 #include "ft_printf.h"
 
@@ -32,8 +24,8 @@ static void	ft_parse(char c, int *counter, va_list ap)
 		f_arg_di(counter, ap);
 	if (c == 'u')
 		f_arg_u(counter, ap);
-//	if (c == 'p')
-//		f_arg_p(counter, ap);
+	if (c == 'p')
+		f_arg_p(counter, ap);
 	if (c == '%')
 		f_arg_pc(counter);
 	if (c == 'x')
@@ -67,12 +59,17 @@ int	ft_printf(const char *str, ...)
 	va_end (ap);
 	return (counter);
 }
-
-int
-	main(void)
+/*
+int	main(void)
 {
-	int k = ft_printf("%X\n", 122);
-	int l = printf("%X\n", 122);
-	printf("%i %i", k, l);
+	int a = 153;
+	unsigned int b = 4016503368;
+	puts("ft_printf-------");
+	int k = ft_printf("%x\n%p\n", b, &a);
+	puts("printf----------");
+	int l = printf("%x\n%p\n", b, &a);
+	puts("return----------");
+	printf("%i - %i\n", k, l);
 	return (0);
 }
+*/

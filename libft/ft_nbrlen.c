@@ -6,13 +6,15 @@
 /*   By: bda-silv <bda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 23:13:59 by bda-silv          #+#    #+#             */
-/*   Updated: 2022/06/29 23:18:29 by bda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/30 20:43:07 by bda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_nbrlen(int n, int base)
+#include "libft.h"
+
+int	ft_nbrlen(unsigned long long n, unsigned int base)
 {
-	int	i;
+	size_t	i;
 
 	if (n == 0)
 		return (1);

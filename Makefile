@@ -6,7 +6,7 @@
 #    By: bda-silv <bda-silv@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/18 18:08:33 by bda-silv          #+#    #+#              #
-#*   Updated: 2022/06/30 00:56:59 by                  ###   ########.fr       *#
+#*   Updated: 2022/07/01 15:03:37 by                  ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ OBJS	=	$(SRCS:.c=.o)
 
 LIB		=	./libft
 
-NAME	=	libftprint.a
+NAME	=	libftprintf.a
 
 CC 		=	cc
 CFLAGS 	=	-Wall -Wextra -Werror
@@ -42,8 +42,15 @@ fclean:		clean
 
 re:			fclean all
 
+x:			fclean
+			$(RM) -r a.out a.out.dSYM
+
 c:			all
 			$(CC) $(FLAGS) $(SRCS) $(NAME)
-			./a.out && rm a.out && $(MAKE) clean
+			./a.out && $(MAKE) x
 
-.PHONY:		all clean fclean re c
+d:			all
+			$(CC) $(FLAGS) -g $(SRCS) $(NAME)
+			lldb a.out && $(MAKE) x
+
+.PHONY:		all clean fclean re c d x
