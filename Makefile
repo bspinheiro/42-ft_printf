@@ -6,7 +6,7 @@
 #    By: bda-silv <bda-silv@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/18 18:08:33 by bda-silv          #+#    #+#              #
-#*   Updated: 2022/07/04 11:35:38 by                  ###   ########.fr       *#
+#*   Updated: 2022/07/04 12:01:53 by                  ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,6 +45,7 @@ clean:
 			$(RM) $(OBJS)
 
 fclean:		clean
+			$(MAKE) fclean -C $(LIB)
 			$(RM) $(NAME)
 
 re:			fclean all
