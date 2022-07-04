@@ -6,7 +6,7 @@
 #    By: bda-silv <bda-silv@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/18 18:08:33 by bda-silv          #+#    #+#              #
-#*   Updated: 2022/07/04 11:34:57 by                  ###   ########.fr       *#
+#*   Updated: 2022/07/04 11:35:38 by                  ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,15 +49,4 @@ fclean:		clean
 
 re:			fclean all
 
-outclean:	fclean
-			$(RM) -r a.out a.out.dSYM
-
-comp:		all
-			$(CC) $(FLAGS) $(SRCS) $(NAME)
-			./a.out && $(MAKE) outclean
-
-debug:		all
-			$(CC) $(FLAGS) -g $(SRCS) $(NAME)
-			lldb a.out && $(MAKE) outclean
-
-.PHONY:		all clean fclean re comp debug outclean
+.PHONY:		all clean fclean re
