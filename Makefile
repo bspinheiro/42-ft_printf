@@ -6,11 +6,18 @@
 #    By: bda-silv <bda-silv@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/18 18:08:33 by bda-silv          #+#    #+#              #
-#*   Updated: 2022/07/01 15:03:37 by                  ###   ########.fr       *#
+#*   Updated: 2022/07/04 11:34:57 by                  ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	=	$(wildcard *.c)
+SRCS	=	f_arg_c.c \
+			f_arg_di.c \
+			f_arg_p.c \
+			f_arg_pc.c \
+			f_arg_s.c \
+			f_arg_u.c \
+			f_arg_x.c \
+			ft_printf.c \
 
 OBJS	=	$(SRCS:.c=.o)
 
@@ -42,15 +49,15 @@ fclean:		clean
 
 re:			fclean all
 
-x:			fclean
+outclean:	fclean
 			$(RM) -r a.out a.out.dSYM
 
-c:			all
+comp:		all
 			$(CC) $(FLAGS) $(SRCS) $(NAME)
-			./a.out && $(MAKE) x
+			./a.out && $(MAKE) outclean
 
-d:			all
+debug:		all
 			$(CC) $(FLAGS) -g $(SRCS) $(NAME)
-			lldb a.out && $(MAKE) x
+			lldb a.out && $(MAKE) outclean
 
-.PHONY:		all clean fclean re c d x
+.PHONY:		all clean fclean re comp debug outclean
