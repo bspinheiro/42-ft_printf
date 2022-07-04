@@ -6,7 +6,7 @@
 /*   By: bda-silv <bda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 10:37:45 by bda-silv          #+#    #+#             */
-/*   Updated: 2022/07/01 14:45:45 by bda-silv         ###   ########.fr       */
+/*   Updated: 2022/07/04 10:33:01 by bda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdio.h> // TODO: REMOVE BEFORE SUBMIT
 
 int				ft_isalpha(int c);
 int				ft_isdigit(int c);

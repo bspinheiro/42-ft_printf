@@ -6,7 +6,7 @@
 /*   By: bda-silv <bda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 14:27:17 by bda-silv          #+#    #+#             */
-/*   Updated: 2022/07/01 14:57:48 by bda-silv         ###   ########.fr       */
+/*   Updated: 2022/07/04 10:40:01 by bda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,17 +59,3 @@ int	ft_printf(const char *str, ...)
 	va_end (ap);
 	return (counter);
 }
-/*
-int	main(void)
-{
-	int a = 153;
-	unsigned int b = 4016503368;
-	puts("ft_printf-------");
-	int k = ft_printf("%x\n%p\n", b, &a);
-	puts("printf----------");
-	int l = printf("%x\n%p\n", b, &a);
-	puts("return----------");
-	printf("%i - %i\n", k, l);
-	return (0);
-}
-*/
